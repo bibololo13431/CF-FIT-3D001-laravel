@@ -36,7 +36,7 @@
                     @enderror
                 </div>
             </div>
-            {{-- <div class="row">
+            <div class="row">
                 <div class="input-field col s12">
                     <label for="type">Type</label>
                     <input id="type" type="text" value="{{optional($scheduleCatProDetail->type)->type}}" name="type" placeholder="Giường nằm or Ghế ngồi">
@@ -44,7 +44,7 @@
                         <span style="color: red">{{ $message }}</span>
                     @enderror
                 </div>
-            </div> --}}
+            </div>
             @csrf
             <div class="row">
                 <div class="input-field col s12">

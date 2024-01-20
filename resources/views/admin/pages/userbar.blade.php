@@ -90,9 +90,9 @@
                                 </li>
                                 <li><a href="{{ route('admin.tour.create') }}">Add New Tour</a>
                                 </li>
-                                <li><a href="{{route('admin.schedule_category')}}">All Package Categories</a>
+                                <li><a href="{{route('admin.schedule_category')}}">All Schedule</a>
                                 </li>
-                                <li><a href="{{route('admin.schedule_category.create')}}">Add Package Categories</a>
+                                <li><a href="{{route('admin.schedule_category.create')}}">Add Schedule</a>
                                 </li>
                             </ul>
                         </div>
