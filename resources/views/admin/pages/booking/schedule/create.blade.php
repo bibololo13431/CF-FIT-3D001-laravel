@@ -5,7 +5,11 @@
 @section('content')
 
 <div class="sb2-2">
-
+    @if (session('msg'))
+        <div class="alert alert-success" role="alert">
+        {{ session('msg') }}
+        </div>
+    @endif
     <div class="sb2-2-2">
         <ul>
             <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>

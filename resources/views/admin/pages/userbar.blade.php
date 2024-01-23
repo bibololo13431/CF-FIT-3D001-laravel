@@ -73,7 +73,7 @@
                 <ul class="collapsible" data-collapsible="accordion">
                     <li><a href="{{ route('admin.pages.dashboard') }}" class="collapsible-header"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                     </li>
-                    <li><a href="#" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+                    {{-- <li><a href="#" class="collapsible-header"><i class="fa fa-user" aria-hidden="true"></i> Users</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
                                 <li><a href="user-all.html">All Users</a>
@@ -82,7 +82,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li> --}}
                     <li><a href="#" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Tour Packages</a>
                         <div class="collapsible-body left-sub-menu">
                             <ul>
@@ -93,6 +93,14 @@
                                 <li><a href="{{route('admin.schedule_category')}}">All Schedule</a>
                                 </li>
                                 <li><a href="{{route('admin.schedule_category.create')}}">Add Schedule</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" class="collapsible-header"><i class="fa fa-umbrella" aria-hidden="true"></i> Phone order checked</a>
+                        <div class="collapsible-body left-sub-menu">
+                            <ul>
+                                <li><a href="{{ route('admin.phonebook.index') }}">Phone checked</a>
                                 </li>
                             </ul>
                         </div>

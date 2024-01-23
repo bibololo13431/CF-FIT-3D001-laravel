@@ -32,7 +32,7 @@
 
     <div class="sb2-2-2">
         <ul>
-            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <li><a href="{{ route('admin.pages.dashboard') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
             </li>
             <li class="active-bre"><a href="#"> Schedule List</a>
             </li>

@@ -58,11 +58,13 @@ class PlaceOrderController extends Controller
             $paymentMethod=$request->payment_method;
             if($paymentMethod === 'VNBANK'){
             $vnp_Url=$this->vnpayService->getVNPayUrl($order, 'VNBANK');
-
             return Redirect::to($vnp_Url);
         }   elseif($paymentMethod ==='INTCARD'){
             $vnp_Url = $this->vnpayService->getVNPayUrl($order,'INTCARD');
             return Redirect::to($vnp_Url);
+        }   elseif($paymentMethod ==='PHONEBOOK'){
+            $vnp_Url = $this->vnpayService->getVNPayUrl($order,'PHONEBOOK');
+            Mail::to('nguyenngocthien7742@gmail.com')->send(new BookAdminEmail($order));
         }
 
             return redirect()->route('home')->with('msg', 'Dat hang thanh cong');

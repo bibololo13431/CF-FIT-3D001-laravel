@@ -5,7 +5,7 @@
   <!--== breadcrumbs ==-->
   <div class="sb2-2-2">
       <ul>
-          <li><a href="index-2.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+          <li><a href="{{ route('admin.pages.dashboard') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
           </li>
           <li class="active-bre"><a href="#"> Dashboard</a>
           </li>
@@ -16,6 +16,11 @@
 
   <!--== User Details ==-->
   <div class="ad-v2-hom-info">
+    @if (session('msg'))
+      <div class="alert alert-success" role="alert">
+        {{ session('msg') }}
+      </div>
+    @endif
     <div class="ad-v2-hom-info-inn">
       <ul>
         <li>

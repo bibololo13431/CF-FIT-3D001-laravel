@@ -4,6 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Events\SeatBook;
 use App\Http\Controllers\Controller;
+use App\Jobs\SeatBlockJob;
 use App\Models\SeatDetail;
 use App\Models\Tour;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ class BookingSeatController extends Controller
         $selectedSeat = $request->input('selectedSeat');
         $seatNumbers = explode(',',$selectedSeat);
         $seatNumbers = array_map('trim', $seatNumbers);
-        // SeatDetail::whereIn('seat_number', $seatNumbers)->update(['status' => 'Booked']);
+        SeatDetail::whereIn('seat_number', $seatNumbers)->update(['status' => 'Waited']);
+        SeatBlockJob::dispatch($seatNumbers)->delay(now()->addMinutes(20));
         $countSeat = count($seatNumbers);
         $tourId = session('tour_id');
         $tour = Tour::findOrFail($tourId);

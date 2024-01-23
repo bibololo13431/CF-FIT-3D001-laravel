@@ -95,6 +95,13 @@
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
+                                    <div class="form-check">
+                                        <label for="PHONEBOOK">
+                                            PHONEBOOK
+                                            <input value="PHONEBOOK" name="payment_method" type="radio" id="PHONEBOOK">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
                             </div>
                         </div>
                     </div>

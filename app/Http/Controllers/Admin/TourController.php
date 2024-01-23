@@ -49,7 +49,7 @@ class TourController extends Controller
         $eventTour=Tour::create($arrayData);
         $eventTour->update(['actualseat' => $eventTour->seatqty]);
         event(new TourCreate($eventTour));
-        return redirect()->route('admin.tour.index')->with('msg','Them san pham thanh cong');
+        return redirect()->route('admin.tour.index')->with('msg','Them Tour thanh cong');
     }
     private function storeImage(Request $request): ?string{
         $fileName = null;

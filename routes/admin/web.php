@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Admin\PhoneBookController as AdminPhoneBookController;
 use App\Http\Controllers\admin\ScheduleCatProController;
 use App\Http\Controllers\Admin\TourController as AdminTourController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\PhoneBookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TourController;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +49,10 @@ Route::prefix('admin')->middleware('checkroleaccount')->name('admin.')->group(fu
     Route::post('tour/force_delete/{id}',[AdminTourController::class,'forcedelete'])->name('tour.force.delete');
     Route::get('dashboard',[DashBoardController::class,'index'])->name('pages.dashboard');
 
+    Route::resource('phonebook', AdminPhoneBookController::class );
+    Route::post('phonebook/confirm/{id}', [AdminPhoneBookController::class,'confirm'])->name('phonebook.confirm');
+    Route::post('phonebook/cancel/{id}', [AdminPhoneBookController::class,'cancel'])->name('phonebook.cancel');
+
 });
 
 Route::get('redirect-google', [GoogleController::class,'redirect'])->name('google.redirect');
@@ -64,6 +70,6 @@ Route::get('test-sms', function(){
             'body' => $messeage
         ]
     );
-    // return redirect()->route('home')->with('msg', 'Dat hang thanh cong');
+    return redirect()->route('home')->with('msg', 'Dat hang thanh cong');
 })->name('sent.sms');
 

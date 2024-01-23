@@ -30,10 +30,9 @@ class VNPayService
             $seatNumbers = session('seatNumbers');
             $tourId = session('tourId');
             $countSeat = session('countSeat');
-
             event(new SeatStatusEvent($seatNumbers, $tourId, $countSeat));
 
-            // return redirect()->route('sent.sms');
+            return redirect()->route('sent.sms');
             return redirect()->route('home')->with('msg','Dat hang Thanh cong');
         }else{
             $order->status ='cancel';

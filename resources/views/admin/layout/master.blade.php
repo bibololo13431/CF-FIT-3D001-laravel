@@ -10,6 +10,7 @@
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Quicksand:300,400,500" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
     <!-- FONT-AWESOME ICON CSS -->
     <link rel="stylesheet" href="{{asset('admin_public/css/font-awesome.min.css')}}">
